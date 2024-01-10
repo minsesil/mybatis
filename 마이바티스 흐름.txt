@@ -1,0 +1,22 @@
+<미이바티스 흐름>
+index.jsp -> main.jsp (include:menubar.jsp) -> menubar.jsp -> MemberEnrollFormController -> MemberEenrollForm.jsp
+->idCheck(ajax:controller->impl->dao->xml)
+->insert(controller->impl->dao->xml)
+
+webapp 바로 하위에 있는 jsp는 url을 알면 들어갈수 있다
+
+WEB-INF하위에 들어있는 JSP는 URL을 알아도 들어갈수 없다. controller를 통해서 들어간다
+
+
+* menubar.jsp의 login부분
+
+->login Servlet -> (interface)MemberService
+<순서>
+->MemberServiceImpl -> MemberDao(DB연동)
+
+->member-mapper.xml(실제 sql문)
+
+menubar.jsp -> loginController -> member-mapper -> errorPage -> logoutController 
+
+
+  

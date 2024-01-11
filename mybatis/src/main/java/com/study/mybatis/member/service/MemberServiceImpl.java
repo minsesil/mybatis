@@ -2,6 +2,7 @@ package com.study.mybatis.member.service;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.study.mybatis.member.vo.Member;
 import com.study.mybatis.common.Template;
 import com.study.mybatis.member.dao.MemberDao;
 import com.study.mybatis.member.vo.Member;
@@ -11,7 +12,7 @@ public class MemberServiceImpl implements MemberService {
 	private MemberDao mDao = new MemberDao();
 
 	
-	//로그인
+	// 로그인
 	@Override
 	public Member loginMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -19,6 +20,7 @@ public class MemberServiceImpl implements MemberService {
 		sqlSession.close();
 		return loginUser;
 	}
+	
 	
 	//체크아이디
 	@Override
@@ -28,8 +30,9 @@ public class MemberServiceImpl implements MemberService {
 		sqlSession.close();
 		return checkid;
 	}
+
 	
-	//회원가입
+	// 회원가입
 	@Override
 	public int insertMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -44,17 +47,34 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 
-
+    // 회원정보 수정
 	@Override
-	public int updateMember(Member m) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getMemberUpdate(Member m) {
+		
+		SqlSession sqlSession = Template.getSqlSession();		
+		int getMemberUpdate = mDao.getMemberUpdate(sqlSession, m);		
+		sqlSession.close();		
+		return getMemberUpdate;
 	}
-
+	
+	@Override
+	public int memberUpdate(Member m) {
+		
+		SqlSession sqlSession = Template.getSqlSession();		
+		int memberUpdate = mDao.memberUpdate(sqlSession, m);		
+			if(memberUpdate > 0) { sqlSession.commit(); }		
+			sqlSession.close();		
+		return memberUpdate;
+	}
+	
+	
+	
 	@Override
 	public int deleteMember(String userId) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
 
 }

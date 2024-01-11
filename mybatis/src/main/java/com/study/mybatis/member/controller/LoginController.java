@@ -21,14 +21,14 @@ public class LoginController extends HttpServlet {
 		m.setUser_id(request.getParameter("userId"));
 		m.setUser_pwd(request.getParameter("userPwd"));
 		
-		Member loginUSer = new MemberServiceImpl().loginMember(m);
+		Member loginUser = new MemberServiceImpl().loginMember(m);
 		
-		if(loginUSer==null) {  //로그인 실패
+		if(loginUser==null) {  //로그인 실패
 			request.setAttribute("errorMsg", "로그인 실패");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 			
 		}else {
-			request.getSession().setAttribute("loginUser", loginUSer);
+			request.getSession().setAttribute("loginUser", loginUser);
 			response.sendRedirect(request.getContextPath());
 			//getContextPath() : root path
 			

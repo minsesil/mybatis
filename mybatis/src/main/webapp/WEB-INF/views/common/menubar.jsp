@@ -71,7 +71,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td><a href="" style="color:black;">마이페이지</a> /</td>
+							<td><a href="updateForm.me" style="color:black;">마이페이지</a> /</td>
 							<td><a href="logout.me" style="color:black;">로그아웃</a></td>
 						</tr>
 					</table>

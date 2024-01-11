@@ -96,15 +96,21 @@
 			values(seq_rno.nextval, #{reply_content}, #{ref_bno}, #{reply_writer}, sysdate, default)
 	</insert>
 	
-		<insert id="insertBoard" parameterType="Board">
-		insert into board
-			values
-			(seq_bno.nextval, 
-			#{board_writer}, 
-			#{board_title}, 
-			#{board_content}, 
-			sysdate, 
-			default)
-	</insert>
-	
+
+<!-- 게시글입력 -->
+ <insert id="insertBoard" parameterType="Board"> <!-- insert는 resultType생략 -->
+ 	insert into board(
+ 		board_no,
+ 		board_writer,
+ 		board_title,
+ 		board_content,
+ 		create_date,
+ 		default)
+ 		VALUES(
+ 		#{board_no},
+ 		#{board_writer},
+ 		#{board_title},
+ 		#{board_content},
+ 		#{create_date})
+ </insert>	
 </mapper>

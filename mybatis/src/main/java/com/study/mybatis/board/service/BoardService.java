@@ -30,6 +30,6 @@ public interface BoardService {
 	int insertReply(Reply reply);
 	
 	//게시글 등록
-	int insertBoard(Board b);
+	int insertBoard(Board board);
 	
 }

@@ -11,7 +11,11 @@ public interface MemberService {
 	
 	int checkId(String userId);
 	
-	int updateMember(Member m);
 	
 	int deleteMember(String userId);
+
+	
+	//회원정보수정
+	int getMemberUpdate(Member m);
+	int memberUpdate(Member m);
 }

@@ -129,4 +129,24 @@
     <servlet-name>BoardInsertFormController</servlet-name>
     <url-pattern>/binsertForm.me</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberUpdateController</display-name>
+    <servlet-name>MemberUpdateController</servlet-name>
+    <servlet-class>com.study.mybatis.member.controller.MemberUpdateController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberUpdateController</servlet-name>
+    <url-pattern>/update.me</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberUpdateFormController</display-name>
+    <servlet-name>MemberUpdateFormController</servlet-name>
+    <servlet-class>com.study.mybatis.member.controller.MemberUpdateFormController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberUpdateFormController</servlet-name>
+    <url-pattern>/updateForm.me</url-pattern>
+  </servlet-mapping>
 </web-app>

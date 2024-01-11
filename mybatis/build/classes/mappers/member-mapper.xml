@@ -54,7 +54,7 @@
   
   
  <!-- check Id -->
- <select id="checkId" resultType="_int"><!-- select,updte,delete는 resultType써준다 -->
+ <select id="checkId" resultType="_int"><!-- select,updte,delete는 resultType써준다 ?-->
  	select count(*)
  		from member
  	where user_id = #{user_id}
@@ -83,5 +83,16 @@
  		#{address})
  </insert>
  
+	
+ <!-- 회원정보 수정 -->
+ <update id="memberUpdate" parameterType="Member">
+		update member set		    
+		    user_name = #{user_name},
+		    user_pwd = #{user_pwd},
+ 			email = #{email},
+ 			phone = #{phone},
+ 			address = #{address},
+		 where user_id = #{user_id}
+</update>
   
 </mapper>

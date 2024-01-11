@@ -49,4 +49,14 @@ public class MemberDao {
 	public int insertMember(SqlSession sqlSession, Member m) {
 		return sqlSession.insert("memberMapper.insertMember",m);
 	}
+	
+	//회원정보수정
+	public int getMemberUpdate(SqlSession sqlSession, Member m) {
+		return sqlSession.selectOne("memberMapper.getMemberUpdate", m);
+	}
+	
+	public int memberUpdate(SqlSession sqlSession, Member m) {
+		return sqlSession.update("memberMapper.memberUpdate", m);
+	}
+
 }

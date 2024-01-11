@@ -16,8 +16,6 @@ import com.study.mybatis.board.vo.Board;
 
 public class BoardInsertController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private int board_no;
-	private Board board;
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
